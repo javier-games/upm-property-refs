@@ -1,6 +1,6 @@
 {
   "name": "games.monogum.bricksbucket.propertyrefs",
-  "version": "0.1.0-dev.3",
+  "version": "1.0.0",
   "displayName": "Property Refs",
   "description": "PropertyRef allows you to create shortcuts to the values of a prefab and modify them.",
   "unity": "2021.3",
