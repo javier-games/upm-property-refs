@@ -9,12 +9,12 @@ jobs:
 
   set-version:
     name: Set Version
-    uses: ./.github/workflows/semantic-version-workflow.yml
+    uses: ./.github/workflows/job-set-version.yml
 
   build-github:
     name: Build Package for GitHub Registry
     needs: set-version
-    uses: ./.github/workflows/build-package-workflow.yml
+    uses: ./.github/workflows/job-build-package.yml
     with:
       overwrite-publish-config: "https://npm.pkg.github.com/@$GITHUB_REPOSITORY_OWNER"
       artifact-name: github-npm-package
@@ -22,7 +22,7 @@ jobs:
   build-npm:
     name: Build Package for NPM Registry
     needs: set-version
-    uses: ./.github/workflows/build-package-workflow.yml
+    uses: ./.github/workflows/job-build-package.yml
 
   deploy-github:
     name: Deploy Package to GitHub Registry
@@ -30,7 +30,7 @@ jobs:
     permissions:
       packages: write
       contents: read
-    uses: ./.github/workflows/deploy-package-workflow.yml
+    uses: ./.github/workflows/job-deploy-package.yml
     with:
       registry-url: 'https://npm.pkg.github.com'
       artifact-name: github-npm-package
@@ -43,7 +43,7 @@ jobs:
     permissions:
       contents: read
       id-token: write
-    uses: ./.github/workflows/deploy-package-workflow.yml
+    uses: ./.github/workflows/job-deploy-package.yml
     secrets:
       access-token: ${{ secrets.NPM_TOKEN }}
 
@@ -53,7 +53,7 @@ jobs:
     needs: [set-version, build-npm]
     permissions:
       contents: write
-    uses: ./.github/workflows/deploy-github-assets-workflow.yml
+    uses: ./.github/workflows/job-github-release.yml
     with:
       tag: ${{ needs.set-version.outputs.version }}
       is-pre-release: true
@@ -64,6 +64,6 @@ jobs:
     needs: [set-version, build-npm]
     permissions:
       contents: write
-    uses: ./.github/workflows/deploy-github-assets-workflow.yml
+    uses: ./.github/workflows/job-github-release.yml
     with:
       tag: ${{ needs.set-version.outputs.version }}
