@@ -21,8 +21,34 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install Dependencies
-        uses: javier-games/semantic-version-common-dependencies@v1.1
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.8.1'
+
+      - name: Cache npm Packages
+        uses: actions/cache@v3
+        env:
+          cache-name: semantic-version
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ env.cache-name }}
+          restore-keys: ${{ runner.os }}-npm-
+
+      - name: Install apt Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-suggests --no-install-recommends jq
+
+      - name: Install npm Dependencies
+        run: |
+          npm install -g semantic-release@latest
+          npm install -g @semantic-release/changelog@latest @semantic-release/commit-analyzer@latest
+          npm install -g @semantic-release/release-notes-generator@latest
+          npm install -g @semantic-release/exec@latest
+          npm install -g @semantic-release/git@latest
+          npm install -g @semantic-release/github@latest
+          npm install -g conventional-changelog-conventionalcommits@latest
 
       - name: Get Current Version
         run: jq -r .version package.json > .version
@@ -30,9 +56,9 @@ jobs:
       - name: Set Version
         run: |
           if ${{ inputs.dry }}; then
-            semantic-release --dry-run
+            npx semantic-release --dry-run
           else
-            semantic-release
+            npx semantic-release
           fi
 
       - name: Output Version
