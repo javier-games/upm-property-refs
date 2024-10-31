@@ -1,14 +1,16 @@
-# PropertyRefs for Unity
+<p align="center">
+  <img src=""/>
+</p>
 
-[![Build status](https://github.com/javier-games/property-refs/actions/workflows/pull-request-workflow.yml/badge.svg)]()
-[![Build status](https://github.com/javier-games/property-refs/actions/workflows/development-workflow.yml/badge.svg)]()
-[![Build status](https://github.com/javier-games/property-refs/actions/workflows/release-workflow.yml/badge.svg)]()
+[![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=fff)](https://github.com/javier-games/upm-propertyrefs)
+[![Itch.io](https://img.shields.io/badge/itch.io-FA5C5C?logo=Itch.io&logoColor=fff)](https://javier-games.itch.io/propertyrefs)
+[![npm](https://img.shields.io/badge/npm-CB3837?logo=npm&logoColor=fff)](https://www.npmjs.com/package/games.javier.upm.propertyrefs)
+[![OpenUPM](https://img.shields.io/badge/OpenUPM-3A6CE2.svg?logo=data:image/svg%2bxml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+Cjxzdmcgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDI1NiAyNTYiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM6c2VyaWY9Imh0dHA6Ly93d3cuc2VyaWYuY29tLyIgc3R5bGU9ImZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoyOyI+CiAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLDExNiw4KSI+CiAgICAgICAgPHBhdGggZD0iTS0yNi4wMjQsNjMuNzFDLTI1LjY3NSw2MS4zNTMgLTI1LjI3OSw1OS43MTUgLTI0LjgzMiw1OS4xMjNDLTIzLjMxOCw1Ni4xOTQgLTIzLjMxOCw1Ni4xOTQgLTIyLjE3Niw1My4wMjdDLTIwLjA0Myw0Ny41MzUgLTE2LjExMiw0My4yMDYgLTEyLjA3LDM4Ljk4NEwtMTAuMTg4LDM3TC04LjQ4LDM1LjMxM0MtNC4yMTcsMjguNjUyIC00LjQ0OCwxOS40MzEgLTMuODc3LDExLjc1NEMtMy40Niw3LjA5NCAtMi44ODMsMy44NjUgMCwwQzUuNjA4LDAuMTE0IDguMTg2LDEuNDIzIDEyLjA0Nyw1LjQyNkMxMy42ODYsNy41ODYgMTQuODQ0LDkuNTI4IDE2LjA3OCwxMS45MThDMjAuMjIxLDE5Ljg4OCAyMC4yMjEsMTkuODg4IDI3LjMyOSwyNC44NzZDMzEuMDQ5LDI1LjYxMiAzNC43MjUsMjUuODg4IDM4LjUwNywyNi4xMUM0Ni45OTUsMjYuNjQyIDU0LjI3MywyOC43MTMgNjIuMjUsMzEuNjI1TDY1LjY1OCwzMi44NjdDNjcuNjU1LDMzLjYwNSA2OS42NDgsMzQuMzUxIDcxLjYzOCwzNS4xMDhDNzMuNDExLDM1Ljc3OCA3NS4yMDIsMzYuNDAxIDc3LDM3Qzc5LjE0NiwzNS41MyA3OS4xNDYsMzUuNTMgODEuMzc1LDMzLjQzOEM4OS42MzUsMjYuNTk2IDk4LjA1OSwyMi4xNzIgMTA4Ljk1MywyMi42OTFDMTExLDIzIDExMSwyMyAxMTIsMjRDMTEzLjMzNSwzNC4zMTYgMTA5LjU3MSw0My4xMjMgMTA2LjAyMyw1Mi42MTdDMTAzLjU5OCw1OS41NDQgMTAyLjQ4Nyw2NC40NTMgMTA0LjM5Niw3MS42MjhDMTA1LjI5MSw3NS4xNDIgMTA1LjEzNiw3OC4zOTMgMTA1LDgyQzEwNS4yMDMsODIuMDI5IDEwNS4zNCw4Mi4yODQgMTA1LjM5NCw4Mi43MzdMMTI5LDkwTDEyOSwyMDRMMTAsMjQxTC0xMDEsMjA1TC0xMDEsOTBMLTI2LjAyNCw2My43MVpNNjguMTI1LDY2LjQzOEM2NS42OTQsNjguOTEyIDY1LjY5NCw2OC45MTIgNjUuNSw3Mi41NjNDNjUuNzc1LDc1Ljg1NyA2NS43NzUsNzUuODU3IDY3LjA2Myw3Ny45MzhDNzAuMTIsNzkuNjE0IDcyLjU5MSw3OS4zNjUgNzYsNzlDNzguMTUzLDc3LjU2NSA3OC43OTMsNzYuNDQ0IDc5Ljg3NSw3NC4xMjVDODAuMDY1LDcwLjg5NSA3OS4wMjEsNjkuNDc3IDc3LDY3QzczLjI5MSw2NC45ODQgNzEuOTUyLDY0LjUyNCA2OC4xMjUsNjYuNDM4Wk0tMjgsNzBDLTMxLjM5MSw3MC43ODQgLTM0LjcxLDcyLjI2MSAtMzgsNzRDLTM1LjI0OCw3NS4xMTEgLTMyLjM2Miw3NS45ODEgLTI5LDc2Qy0yOS4xODksNzMuOSAtMjguNzMzLDcxLjkyMyAtMjgsNzBaTS05Niw5N0wtOTYsMjAxTDcsMjM0TDcsMTI5LjY3TC05Niw5N1pNMTMsMTI5LjY3TDEzLDIzNEwxMjQsMjAwTDEyNCw5NkwxMywxMjkuNjdaTS04OSw5MkwxMCwxMjRMNTgsMTA3TC00Myw3OEwtODksOTJaTTEwNSw5NkwxMTgsOTJMMTA1LDg4TDEwNSw5NlpNMy42MjUsNTAuNjI1QzEuODAxLDUyLjk0OCAxLjgwMSw1Mi45NDggMS40MzgsNTZDMS43NjUsNTkuMTQ2IDEuNzY1LDU5LjE0NiA0LjEyNSw2MS40MzhDNi45MTIsNjMuMjQ5IDYuOTEyLDYzLjI0OSAxMC4xMjUsNjNDMTMuMDIyLDYyLjE5MyAxMy4wMjIsNjIuMTkzIDE0LjkzOCw2MC4zMTNDMTYuNDAxLDU3LjEyNyAxNS45ODksNTUuMzIxIDE1LDUyQzEzLjkzNyw1MC4wMiAxMy45MzcsNTAuMDIgMTIsNDlDOC4zNyw0OC40NTkgNi42NzgsNDguNTM2IDMuNjI1LDUwLjYyNVoiIHN0eWxlPSJmaWxsOndoaXRlOyIvPgogICAgPC9nPgo8L3N2Zz4=)](https://openupm.com/packages/games.javier.upm.propertyrefs)
 
-[//]: # ([![Asset Store]&#40;https://img.shields.io/badge/asset_store-available-blue.svg?logo=unity&#41;]&#40;https://assetstore.unity.com&#41;)
-[![Asset Store](https://img.shields.io/badge/npm-available-blue.svg?logo=npm)](https://www.npmjs.com/package/games.monogum.bricksbucket.propertyrefs)
-[![Donate](https://img.shields.io/badge/support-available-blue.svg?logo=paypal)](https://www.paypal.com/donate/?hosted_button_id=QY4PCGA8FMCC4)
 
-PropertyRefs is a comprehensive tool for Unity, crafted to streamline your game development tasks. By creating references to the properties of the components, you can efficiently access and manipulate them from other scripts, centralizing meaningful properties of a game object, prefab, or a scene in one location. This is a significant advantage for game and level designers, offering an enhanced and seamless workflow.
+# PropertyRefs
+
+PropertyRefs is an open source tool for Unity, crafted to streamline your game development tasks. By creating references to the properties of the components, you can efficiently access and manipulate them from other scripts, centralizing meaningful properties of a game object, prefab, or a scene in one location. This is a significant advantage for game and level designers, offering an enhanced and seamless workflow.
 
 ![Property Refs Sample](Documentation~/Images/property-refs-sample.gif)
 
@@ -34,68 +36,27 @@ The PropertyRefs package is currently supported on `Unity 2021.3.17f1`. Usage in
 
 There are several methods available to install PropertyRefs into your Unity project. Choose the one that best suits your needs. It's recommended to install via npm if you wish to keep the package up-to-date easily, as future releases and updates will be readily available.
 
-### Installation via npm
-
-To add PropertyRefs from a npm registry in Unity, follow the steps below:
-
-1. Open your Unity project and navigate to `Edit > Project Settings > Package Manager`.
-2. In the `Scoped Registries` section, click on the `+` button to add a new scoped registry.
-3. Fill in the required fields:
-    - Name: Enter `Monogum`.
-    - URL: Enter `https://registry.npmjs.org`.
-    - Scope(s): Enter `games.monogum.bricksbucket`.
-4. Click `Save` and close the Project Settings window.
-5. Navigate to `Window > Package Manager`.
-6. In the package manager window, select `Packages: My Registries`.
-7. You should see the `games.monogum.bricksbucket.propertyrefs` package listed there. Click `Install` to install the package.
-
-Alternatively, you can directly modify your `Packages/manifest.json` file to add the new scoped registry and the dependency:
-
-1. Add the following scope to the `scopedRegistries` in your `manifest.json` file:
-```json
-{
-  "scopedRegistries": [
-    {
-      "name": "Monogum",
-      "url": "https://registry.npmjs.org",
-      "scopes": ["games.monogum.bricksbucket"]
-    }
-  ]
-}
-```
-2.	Then, add `games.monogum.bricksbucket.propertyrefs` to the dependencies section of your `manifest.json` file:
-```json
-{
-  "dependencies": {
-    "games.monogum.bricksbucket.propertyrefs": "1.0.0"
-  }
-}
-```
-Ensure to replace 1.0.0 with the version number of the PropertyRefs package you intend to install. Save your manifest.json file after making these changes.
-
-### Installation via Cloning
-
-To install PropertyRefs by cloning the repository and adding the package from disk, follow these steps:
-
-1. Clone this repository to your local machine.
-```shell
-git clone https://github.com/javier-games/property-refs.git
-```
-2. Open your Unity project and navigate to `Window > Package Manager`.
-3. In the Package Manager window, click on the `+` icon in the top-left corner.
-4. From the dropdown, select `Add package from disk...`. 
-5. A file explorer window will open. Navigate to the location where you cloned the repository.
-6. Find and select the `package.json` file within the cloned repository and click `Open`.
-
-Unity will automatically detect and install the package. The package should now be listed in the Package Manager.
-
-### Install Specific Versions
-
-Alternatively if you only need a specific version of the project you can select the `Add package from git URL...` and introduce the url of this repository.
-```
-https://github.com/javier-games/property-refs
-```
-Also you can download the tarball file (`games.monogum.bricksbucket.propertyrefs-{version}.tgz`) from the [releases section](https://github.com/javier-games/property-refs/releases) of this repository and add it throw the `Add package from tarball...` option.
+- **Package Name:**
+    ```
+    games.javier.upm.propertyrefs
+    ```
+- **Display Package Name:**
+    ```
+    Javier Games
+    ```
+- **NPM Registry URL:**
+    ```
+    https://registry.npmjs.org
+    ```
+- **Scope(s):**
+    ```
+    games.javier
+    ```
+- **OpenUPM CI command**
+    ```
+    openupm add games.javier.upm.propertyrefs
+    ```
+This package is being distributed on [npm](https://www.npmjs.com/package/games.javier.upm.propertyrefs), [OpenUPM](https://openupm.com/packages/games.javier.upm.propertyrefs) or a downloadable Tarball from the [Releases section](https://github.com/javier-games/propertyrefs/releases) of this repository or from the dedicated [itch.io page](https://javier-games.itch.io/propertyrefs). For detailed installation instructions, please refer to the guide on our [installation documentation page](https://installation.upm.javier.games).
 
 ## Usage
 
@@ -108,7 +69,7 @@ To establish a reference to the properties of your components, declare a private
 ```csharp
 using System.Collections.Generic;
 using UnityEngine;
-using Monogum.BricksBucket.PropertyRefs;
+using JG.UPM.PropertyRefs;
 
 public class PrefabProperties : MonoBehaviour
 {
@@ -141,7 +102,7 @@ Moreover, PropertyRefs enables you to modify and obtain the value of the `Proper
 
 ```csharp
 using UnityEngine;
-using Monogum.BricksBucket.PropertyRefs;
+using JG.UPM.PropertyRefs;
 
 public class EditableProperty : MonoBehaviour
 {
@@ -194,14 +155,8 @@ Please read our [Contributing Guide](CONTRIBUTING.md) before submitting a Pull R
 
 ## Support
 
-For any questions or issues, please open a [new issue](https://github.com/javier-games/property-refs/issues/new) on this repository.
-
-## Donations
-
-PropertyRefs is a open source project, and it's because of your support that we can stay up and running. If you find this project useful, please consider [making a donation](https://www.paypal.com/donate/?hosted_button_id=QY4PCGA8FMCC4). Your contribution will help us to maintain the project, and continue to develop new features. We appreciate your generosity!
+For any questions or issues, please open a [new issue](https://github.com/javier-games/upm-propertyrefs/issues/new) on this repository.
 
 ## Acknowledgements
 
-We would like to express our gratitude to [Kenney](https://www.kenney.nl) for providing the assets used to create the sample images in this repository. These assets are under the Creative Commons Zero (CC0) license.
-
-Kenney's contribution to the gaming community is significant and invaluable. We strongly encourage you to support his work by making a donation on [Kenney's Donation Page](https://www.kenney.nl/donate) or becoming a patron on [Patreon](https://www.patreon.com/kenney).
+We would like to express our gratitude to [Kenney](https://www.kenney.nl) for providing the assets used to create the samples and images in this repository. These models are under the Creative Commons Zero (CC0) license.

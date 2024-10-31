@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace Monogum.BricksBucket.PropertyRefs
+namespace JG.UPM.PropertyRefs
 {
     /// <summary>
     /// Reference to a property of a component.
@@ -66,14 +66,14 @@ namespace Monogum.BricksBucket.PropertyRefs
         /// <summary>
         /// Gets the Type of the property.
         /// </summary>
-        /// <returns>Null if has not been assigned.</returns>
+        /// <returns>Null if it has not been assigned.</returns>
         public Type GetPropertyType() => 
 			Registry.GetPropertyType(Component, Property);
 
         /// <summary>
         /// Gets the value of the reference.
         /// </summary>
-        /// <returns>Null if has not been assigned.</returns>
+        /// <returns>Null if it has not been assigned.</returns>
         public object GetValue() => 
 			Registry.GetValue(Component, Property);
 

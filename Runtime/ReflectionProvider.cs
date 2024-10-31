@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 
-namespace Monogum.BricksBucket.PropertyRefs
+namespace JG.UPM.PropertyRefs
 {
 	internal class ReflectionProvider : IRegistryProvider
 	{

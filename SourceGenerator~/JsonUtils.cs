@@ -2,7 +2,7 @@ using System.IO;
 using System.Runtime.Serialization.Json;
 using System.Text;
 
-namespace Monogum.BricksBucket.PropertyRefs.SourceGenerator
+namespace JG.UPM.PropertyRefs.SourceGenerator
 {
 	internal static class JsonUtils
 	{

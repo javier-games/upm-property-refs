@@ -3,13 +3,13 @@ using Microsoft.CodeAnalysis.Text;
 using System.IO;
 using System.Text;
 
-namespace Monogum.BricksBucket.PropertyRefs.SourceGenerator
+namespace JG.UPM.PropertyRefs.SourceGenerator
 {
 	[Generator]
 	public class HardwiredRegistryGenerator : ISourceGenerator
 	{
 		private const string FileName = "Registry.PropertyRefsSourceGenerator.additionalfile";
-		private const string NameSpace = "Monogum.BricksBucket.PropertyRefs.Hardwire";
+		private const string NameSpace = "JG.UPM.PropertyRefs.Hardwire";
 		private const string ClassName = "HardwiredRegistry";
 		
 		public void Execute(GeneratorExecutionContext context)
@@ -18,7 +18,7 @@ namespace Monogum.BricksBucket.PropertyRefs.SourceGenerator
 			if (moduleName.StartsWith("UnityEngine.")) return;
 			if (moduleName.StartsWith("UnityEditor.")) return;
 			if (moduleName.StartsWith("Unity.")) return;
-			if (!moduleName.StartsWith("Monogum.")) { return; }
+			if (!moduleName.StartsWith("JG.UPM.")) { return; }
 			
 			var additionalFiles = context.AdditionalFiles;
 			AdditionalText registryAdditionalFile = null;
@@ -136,7 +136,7 @@ using System.Collections.Generic;
 // ReSharper disable RedundantNameQualifier
 // ReSharper disable StringLiteralTypo
 
-namespace Monogum.BricksBucket.PropertyRefs.Hardwire
+namespace JG.UPM.PropertyRefs.Hardwire
 {
 	/// <summary>
 	/// Registered types.
