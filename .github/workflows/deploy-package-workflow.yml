@@ -27,13 +27,13 @@ jobs:
     steps:
 
       - name: Setup Environment
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '20.x'
           registry-url: ${{ inputs.registry-url }}
 
       - name: Download Artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: ${{ inputs.artifact-name }}
 

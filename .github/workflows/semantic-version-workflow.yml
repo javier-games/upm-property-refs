@@ -19,15 +19,15 @@ jobs:
     steps:
 
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20.8.1'
+          node-version: '20.x'
 
       - name: Cache npm Packages
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         env:
           cache-name: semantic-version
         with:
@@ -66,14 +66,14 @@ jobs:
         run: echo "version=$(cat .version)" >> $GITHUB_OUTPUT
 
       - name: Upload Modified package.json
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: package-json
           path: "package.json"
           retention-days: 1
 
       - name: Upload Modified CHANGELOG.md
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: changelog
           path: "CHANGELOG.md"
