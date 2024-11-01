@@ -1,7 +1,3 @@
-<p align="center">
-  <img src=""/>
-</p>
-
 [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=fff)](https://github.com/javier-games/upm-propertyrefs)
 [![Itch.io](https://img.shields.io/badge/itch.io-FA5C5C?logo=Itch.io&logoColor=fff)](https://javier-games.itch.io/propertyrefs)
 [![npm](https://img.shields.io/badge/npm-CB3837?logo=npm&logoColor=fff)](https://www.npmjs.com/package/games.javier.upm.propertyrefs)
@@ -12,7 +8,9 @@
 
 PropertyRefs is an open source tool for Unity, crafted to streamline your game development tasks. By creating references to the properties of the components, you can efficiently access and manipulate them from other scripts, centralizing meaningful properties of a game object, prefab, or a scene in one location. This is a significant advantage for game and level designers, offering an enhanced and seamless workflow.
 
-![Property Refs Sample](Documentation~/Images/property-refs-sample.gif)
+<p align="center">
+  <img src="https://github.com/javier-games/upm-propertyrefs/blob/3a4feec7c3e499c19a8ea90d0835497c4bbc3961/Documentation~/Images/property-refs-sample.gif"/>
+</p>
 
 ## Features
 
@@ -83,7 +81,10 @@ public class PrefabProperties : MonoBehaviour
 
 You can also declare a list of `PropertyRef` instances. In this mode, PropertyRefs conveniently labels the properties in the list with the name of the game object and the property. This labeling facilitates easier identification of properties.
 
-![Property Refs Sample List](Documentation~/Images/property-refs-sample-list.png)
+<p align="center">
+  <img src="https://github.com/javier-games/upm-propertyrefs/blob/3a4feec7c3e499c19a8ea90d0835497c4bbc3961/Documentation~/Images/property-refs-sample-list.png"/>
+</p>
+
 
 ### Property Access Methods
 
