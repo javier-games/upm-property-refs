@@ -1,3 +1,9 @@
+## [1.0.2](https://github.com/javier-games/upm-propertyrefs/compare/1.0.1...1.0.2) (2024-11-07)
+
+### :wrench: Fixed
+
+* Samples Path. ([b438558](https://github.com/javier-games/upm-propertyrefs/commit/b438558733a781c41582585ca2e2451d18398277))
+
 ## [1.0.2-rc.1](https://github.com/javier-games/upm-propertyrefs/compare/1.0.1...1.0.2-rc.1) (2024-11-07)
 
 ### :wrench: Fixed
