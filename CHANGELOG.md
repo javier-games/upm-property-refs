@@ -1,3 +1,18 @@
+## [1.0.1-dev.1](https://github.com/javier-games/upm-propertyrefs/compare/1.0.0...1.0.1-dev.1) (2024-11-07)
+
+### :hammer: Changed
+
+* Renamed CI files. ([ed063b2](https://github.com/javier-games/upm-propertyrefs/commit/ed063b2f0ea77b526bd868eb8158ae140609cc42))
+
+### :tools: Changed
+
+* GitHub actions versions. ([e5de073](https://github.com/javier-games/upm-propertyrefs/commit/e5de073b3ea7d24d2ddf0c89f83ade5c9b494f74))
+
+### :wrench: Fixed
+
+* CI pipeline. ([d7eb8c1](https://github.com/javier-games/upm-propertyrefs/commit/d7eb8c160ee4f040fe585e6425a507634c32a81f))
+* naming semrelease con CI. ([02d8b62](https://github.com/javier-games/upm-propertyrefs/commit/02d8b6219a9d18d5988c300d00c564c840417975))
+
 ## [1.0.0](https://github.com/javier-games/property-refs/compare/0.0.0...1.0.0) (2023-06-16)
 
 
