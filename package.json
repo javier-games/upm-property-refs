@@ -23,12 +23,12 @@
     {
       "displayName": "Property Refs for Prefabs",
       "description": "Contains sample of how to use the PropertyRefs with prefabs.",
-      "path": "Samples~/RefsComponentPrefabs"
+      "path": "Samples~/PropertyRefsForPrefabs"
     },
     {
       "displayName": "Property Ref Source Generator",
       "description": "Contains sample of how to use the PropertyRefs using the source generation.",
-      "path": "Samples~/PropertyRefsSourceGeneration"
+      "path": "Samples~/PropertyRefSourceGenerator"
     }
   ]
 }
