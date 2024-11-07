@@ -1,0 +1,80 @@
+on:
+  workflow_call:
+    inputs:
+      dry:
+        description: "Whether to publish publicly or restricted"
+        required: false
+        type: boolean
+        default: false
+    outputs:
+      version:
+        description: "Semantic version detected."
+        value: ${{ jobs.set-version.outputs.version }}
+
+jobs:
+  set-version:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.output.outputs.version }}
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+
+      - name: Cache npm Packages
+        uses: actions/cache@v4
+        env:
+          cache-name: semantic-version
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ env.cache-name }}
+          restore-keys: ${{ runner.os }}-npm-
+
+      - name: Install apt Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-suggests --no-install-recommends jq
+
+      - name: Install npm Dependencies
+        run: |
+          npm install -g semantic-release@latest
+          npm install -g @semantic-release/changelog@latest @semantic-release/commit-analyzer@latest
+          npm install -g @semantic-release/release-notes-generator@latest
+          npm install -g @semantic-release/exec@latest
+          npm install -g @semantic-release/git@latest
+          npm install -g @semantic-release/github@latest
+          npm install -g conventional-changelog-conventionalcommits@latest
+
+      - name: Get Current Version
+        run: jq -r .version package.json > .version
+
+      - name: Set Version
+        run: |
+          if ${{ inputs.dry }}; then
+            npx semantic-release --dry-run
+          else
+            npx semantic-release
+          fi
+
+      - name: Output Version
+        id: output
+        run: echo "version=$(cat .version)" >> $GITHUB_OUTPUT
+
+      - name: Upload Modified package.json
+        uses: actions/upload-artifact@v4
+        with:
+          name: package-json
+          path: "package.json"
+          retention-days: 1
+
+      - name: Upload Modified CHANGELOG.md
+        uses: actions/upload-artifact@v4
+        with:
+          name: changelog
+          path: "CHANGELOG.md"
+          retention-days: 1

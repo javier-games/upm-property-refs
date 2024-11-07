@@ -13,10 +13,6 @@
     {
       "name": "hotfix/*",
       "prerelease": "rc"
-    },
-    {
-      "name": "feature/*",
-      "prerelease": "feat"
     }
   ],
   "plugins": [
