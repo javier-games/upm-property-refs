@@ -1,3 +1,11 @@
+## [1.0.1-dev.2](https://github.com/javier-games/upm-propertyrefs/compare/1.0.1-dev.1...1.0.1-dev.2) (2024-11-07)
+
+### :tools: Changed
+
+* Package information. ([d96108c](https://github.com/javier-games/upm-propertyrefs/commit/d96108cf0770ece5774c4ed134e9fb0978e3cbf9))
+* Readme images references. ([5d6e1e9](https://github.com/javier-games/upm-propertyrefs/commit/5d6e1e9bb2d7bd62366474a2931f327671ea7b01))
+* Samples with assets. ([dde22bb](https://github.com/javier-games/upm-propertyrefs/commit/dde22bbcc1660d297aeb5fc10e940b8e28fea1b5))
+
 ## [1.0.1-dev.1](https://github.com/javier-games/upm-propertyrefs/compare/1.0.0...1.0.1-dev.1) (2024-11-07)
 
 ### :hammer: Changed
