@@ -1,6 +1,6 @@
 {
   "name": "games.javier.upm.propertyrefs",
-  "version": "1.0.1",
+  "version": "1.0.2-rc.1",
   "displayName": "Property Refs",
   "description": "PropertyRef allows you to create shortcuts to the values of a prefab and modify them.",
   "unity": "2021.3",
