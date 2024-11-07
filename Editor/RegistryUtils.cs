@@ -5,7 +5,7 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 
-namespace Monogum.BricksBucket.PropertyRefs.Editor
+namespace JG.UPM.PropertyRefs.Editor
 {
 	internal static class RegistryUtils
 	{

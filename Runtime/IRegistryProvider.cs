@@ -1,4 +1,4 @@
-namespace Monogum.BricksBucket.PropertyRefs
+namespace JG.UPM.PropertyRefs
 {
 	public interface IRegistryProvider
 	{

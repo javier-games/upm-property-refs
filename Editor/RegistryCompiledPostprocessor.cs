@@ -1,6 +1,6 @@
 using UnityEditor;
 
-namespace Monogum.BricksBucket.PropertyRefs.Editor
+namespace JG.UPM.PropertyRefs.Editor
 {
 	internal class RegistryCompiledPostprocessor : AssetPostprocessor
 	{

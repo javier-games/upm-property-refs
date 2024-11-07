@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Monogum.BricksBucket.PropertyRefs.Editor
+namespace JG.UPM.PropertyRefs.Editor
 {
 	[Serializable]
 	internal class Registry

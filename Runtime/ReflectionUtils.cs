@@ -2,7 +2,7 @@
 using System.Reflection;
 #endif
 
-namespace Monogum.BricksBucket.PropertyRefs
+namespace JG.UPM.PropertyRefs
 {
 	public static class ReflectionUtils
 	{
