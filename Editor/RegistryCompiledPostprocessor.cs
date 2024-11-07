@@ -1,4 +1,5 @@
 using UnityEditor;
+using UnityEditor.Build;
 
 namespace JG.UPM.PropertyRefs.Editor
 {
@@ -17,7 +18,8 @@ namespace JG.UPM.PropertyRefs.Editor
 				if (asset.Contains(RegistryUtils.FileNameWithExtension))
 				{
 					var currentGroup = EditorUserBuildSettings.selectedBuildTargetGroup;
-					var currentSymbols = PlayerSettings.GetScriptingDefineSymbolsForGroup(currentGroup);
+					var currentNameBuildTarget = NamedBuildTarget.FromBuildTargetGroup(currentGroup);
+					var currentSymbols = PlayerSettings.GetScriptingDefineSymbols(currentNameBuildTarget);
 					var symbolList = currentSymbols.Split(';');
 					var isAdded = false;
 
@@ -28,8 +30,8 @@ namespace JG.UPM.PropertyRefs.Editor
 
 					if (!isAdded)
 					{
-						PlayerSettings.SetScriptingDefineSymbolsForGroup(
-							currentGroup,
+						PlayerSettings.SetScriptingDefineSymbols(
+							currentNameBuildTarget,
 							currentSymbols + ";" + RegistryUtils.CodeGenerationEnableDirective
 						);
 					}
@@ -42,7 +44,8 @@ namespace JG.UPM.PropertyRefs.Editor
 				if (asset.Contains(RegistryUtils.FileNameWithExtension))
 				{
 					var currentGroup = EditorUserBuildSettings.selectedBuildTargetGroup;
-					var currentSymbols = PlayerSettings.GetScriptingDefineSymbolsForGroup(currentGroup);
+					var currentNameBuildTarget = NamedBuildTarget.FromBuildTargetGroup(currentGroup);
+					var currentSymbols = PlayerSettings.GetScriptingDefineSymbols(currentNameBuildTarget);
 					var symbolList = currentSymbols.Split(';');
 					var newSymbols = "";
 
@@ -54,7 +57,7 @@ namespace JG.UPM.PropertyRefs.Editor
 					}
 
 					newSymbols = newSymbols.TrimEnd(';');
-					PlayerSettings.SetScriptingDefineSymbolsForGroup(currentGroup, newSymbols);
+					PlayerSettings.SetScriptingDefineSymbols(currentNameBuildTarget, newSymbols);
 				}
 			}
 		}
