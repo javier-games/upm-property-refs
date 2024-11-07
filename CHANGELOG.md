@@ -1,3 +1,9 @@
+## [1.0.1-dev.3](https://github.com/javier-games/upm-propertyrefs/compare/1.0.1-dev.2...1.0.1-dev.3) (2024-11-07)
+
+### :hammer: Changed
+
+* Replaced depreciated methods. ([5061f42](https://github.com/javier-games/upm-propertyrefs/commit/5061f42b8bc6233709c468651f53e3e78c8d3807))
+
 ## [1.0.1-dev.2](https://github.com/javier-games/upm-propertyrefs/compare/1.0.1-dev.1...1.0.1-dev.2) (2024-11-07)
 
 ### :tools: Changed
