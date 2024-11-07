@@ -1,6 +1,6 @@
 {
   "name": "games.javier.upm.propertyrefs",
-  "version": "1.0.1-dev.3",
+  "version": "1.0.2-rc.1",
   "displayName": "Property Refs",
   "description": "PropertyRef allows you to create shortcuts to the values of a prefab and modify them.",
   "unity": "2021.3",
@@ -23,12 +23,12 @@
     {
       "displayName": "Property Refs for Prefabs",
       "description": "Contains sample of how to use the PropertyRefs with prefabs.",
-      "path": "Samples~/RefsComponentPrefabs"
+      "path": "Samples~/PropertyRefsForPrefabs"
     },
     {
       "displayName": "Property Ref Source Generator",
       "description": "Contains sample of how to use the PropertyRefs using the source generation.",
-      "path": "Samples~/PropertyRefsSourceGeneration"
+      "path": "Samples~/PropertyRefSourceGenerator"
     }
   ]
 }
