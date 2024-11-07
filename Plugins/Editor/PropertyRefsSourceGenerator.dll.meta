@@ -4,7 +4,7 @@ labels:
 - RoslynAnalyzer
 PluginImporter:
   externalObjects: {}
-  serializedVersion: 2
+  serializedVersion: 3
   iconMap: {}
   executionOrder: {}
   defineConstraints: []
@@ -13,9 +13,13 @@ PluginImporter:
   isExplicitlyReferenced: 0
   validateReferences: 0
   platformData:
-  - first:
-      : Any
-    second:
+    Android:
+      enabled: 1
+      settings:
+        AndroidLibraryDependee: UnityLibrary
+        AndroidSharedLibraryType: Executable
+        CPU: ARMv7
+    Any:
       enabled: 0
       settings:
         Exclude Android: 0
@@ -24,59 +28,39 @@ PluginImporter:
         Exclude OSXUniversal: 0
         Exclude Win: 0
         Exclude Win64: 0
+        Exclude WindowsStoreApps: 1
         Exclude iOS: 0
-  - first:
-      Android: Android
-    second:
-      enabled: 1
-      settings:
-        CPU: ARMv7
-  - first:
-      Any: 
-    second:
-      enabled: 0
-      settings: {}
-  - first:
-      Editor: Editor
-    second:
+    Editor:
       enabled: 0
       settings:
         CPU: AnyCPU
         DefaultValueInitialized: true
         OS: AnyOS
-  - first:
-      Standalone: Linux64
-    second:
+    Linux64:
       enabled: 1
       settings:
         CPU: AnyCPU
-  - first:
-      Standalone: OSXUniversal
-    second:
+    OSXUniversal:
       enabled: 1
       settings:
-        CPU: None
-  - first:
-      Standalone: Win
-    second:
+        CPU: AnyCPU
+    Win:
       enabled: 1
       settings:
-        CPU: x86
-  - first:
-      Standalone: Win64
-    second:
+        CPU: AnyCPU
+    Win64:
       enabled: 1
       settings:
-        CPU: x86_64
-  - first:
-      Windows Store Apps: WindowsStoreApps
-    second:
+        CPU: AnyCPU
+    WindowsStoreApps:
       enabled: 0
       settings:
         CPU: AnyCPU
-  - first:
-      iPhone: iOS
-    second:
+        DontProcess: false
+        PlaceholderPath: 
+        SDK: AnySDK
+        ScriptingBackend: AnyScriptingBackend
+    iOS:
       enabled: 1
       settings:
         AddToEmbeddedBinaries: false

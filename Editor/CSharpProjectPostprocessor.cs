@@ -1,7 +1,7 @@
 using System.Xml.Linq;
 using UnityEditor;
 
-namespace Monogum.BricksBucket.PropertyRefs.Editor
+namespace JG.UPM.PropertyRefs.Editor
 {
 	internal class CSharpProjectPostprocessor : AssetPostprocessor
 	{

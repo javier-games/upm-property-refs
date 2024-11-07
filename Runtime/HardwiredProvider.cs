@@ -1,6 +1,6 @@
 using System;
 
-namespace Monogum.BricksBucket.PropertyRefs
+namespace JG.UPM.PropertyRefs
 {
 	internal class HardwiredProvider : IRegistryProvider
 	{

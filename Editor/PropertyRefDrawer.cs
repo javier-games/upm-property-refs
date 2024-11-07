@@ -1,14 +1,14 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
-namespace Monogum.BricksBucket.PropertyRefs.Editor
+namespace JG.UPM.PropertyRefs.Editor
 {
     /// <summary>
     /// Drawer for the PropertyRef Class.
     /// </summary>
-    /// <seealso cref="Monogum.BricksBucket.PropertyRefs.PropertyRef"/>
+    /// <seealso cref="JG.UPM.PropertyRefs.PropertyRef"/>
     [CustomPropertyDrawer(typeof(PropertyRef))]
     internal class PropertyRefDrawer : PropertyDrawer
     {

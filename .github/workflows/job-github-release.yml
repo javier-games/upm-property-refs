@@ -1,0 +1,41 @@
+on:
+  workflow_call:
+    inputs:
+      tag:
+        description: "Tag where to upload the files."
+        required: true
+        type: string
+      artifact-name:
+        description: 'Name of the artifact for this package.'
+        required: false
+        type: string
+        default: package
+      is-pre-release:
+        description: "Whether to publish with pre-release label."
+        required: false
+        type: boolean
+        default: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ inputs.artifact-name }}
+
+      - name: Publish
+        run: |
+          if ${{ inputs.is-pre-release }}; then
+            gh release create ${{ inputs.tag }} --generate-notes --prerelease
+          else
+            gh release create ${{ inputs.tag }} --generate-notes 
+          fi
+          gh release upload ${{ inputs.tag }} *.tgz
+        env:
+          GH_TOKEN: ${{ github.token }}

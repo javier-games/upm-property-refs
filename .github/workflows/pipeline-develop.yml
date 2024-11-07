@@ -1,0 +1,48 @@
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+
+  set-version:
+    name: Set Version
+    uses: ./.github/workflows/job-set-version.yml
+
+  build-github:
+    name: Build Package for GitHub Registry
+    needs: set-version
+    uses: ./.github/workflows/job-build-package.yml
+    with:
+      overwrite-publish-config: "https://npm.pkg.github.com/@$GITHUB_REPOSITORY_OWNER"
+      artifact-name: github-npm-package
+
+  build-npm:
+    name: Build Package for NPM Registry
+    needs: set-version
+    uses: ./.github/workflows/job-build-package.yml
+
+  deploy-github:
+    name: Deploy Package to GitHub Registry
+    needs: build-github
+    permissions:
+      packages: write
+      contents: read
+    uses: ./.github/workflows/job-deploy-package.yml
+    with:
+      registry-url: 'https://npm.pkg.github.com'
+      artifact-name: github-npm-package
+    secrets:
+      access-token: ${{ secrets.GITHUB_TOKEN }}
+
+  deploy-npm:
+    name: Deploy Package to NPM Registry
+    needs: build-npm
+    permissions:
+      contents: read
+      id-token: write
+    uses: ./.github/workflows/job-deploy-package.yml
+    with:
+      dry: true
+    secrets:
+      access-token: ${{ secrets.NPM_TOKEN }}

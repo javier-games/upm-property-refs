@@ -3,7 +3,7 @@
 // ReSharper disable InconsistentNaming
 using System.Runtime.Serialization;
 
-namespace Monogum.BricksBucket.PropertyRefs.SourceGenerator
+namespace JG.UPM.PropertyRefs.SourceGenerator
 {
 #pragma warning disable CS0649
 	

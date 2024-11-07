@@ -1,0 +1,48 @@
+on:
+  workflow_call:
+    inputs:
+      artifact-name:
+        description: 'Name of the artifact for this package.'
+        required: false
+        type: string
+        default: package
+      registry-url:
+        description: 'URL of the target registry to deploy.'
+        required: false
+        type: string
+        default: 'https://registry.npmjs.org'
+      dry:
+        description: "Whether to publish publicly or restricted"
+        required: false
+        type: boolean
+        default: false
+    secrets:
+      access-token:
+        description: "Token required for publishing."
+        required: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Setup Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          registry-url: ${{ inputs.registry-url }}
+
+      - name: Download Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ inputs.artifact-name }}
+
+      - name: Publish
+        run: |
+          if ${{ inputs.dry }}; then
+            npm publish *.tgz --dry-run
+          else
+            npm publish *.tgz
+          fi
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.access-token }}
